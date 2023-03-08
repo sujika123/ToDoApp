@@ -1,0 +1,25 @@
+{% extends 'userpages/userhome.html' %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Add Event</h4>
+        <form method ='post' enctype="multipart/form-data">
+        {% csrf_token %}
+            {{form|crispy}}
+       <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+         </div>
+    </div>
+</div>
+
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    {{form|crispy}}-->
+<!--    <br>-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+{% endblock %}

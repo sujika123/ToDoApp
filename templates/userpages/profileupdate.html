@@ -1,0 +1,25 @@
+{% extends 'userpages/userhome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Profile Update</h4>
+        <form method ='post' enctype="multipart/form-data">
+        {% csrf_token %}
+            {{form1|crispy}}
+       <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+
+         </div>
+    </div>
+</div>
+
+
+
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--{{form1|crispy}}-->
+<!--<button type="submit">Update</button>-->
+<!--</form>-->
+{% endblock %}

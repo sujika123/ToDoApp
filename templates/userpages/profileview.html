@@ -1,0 +1,46 @@
+{% extends 'userpages/userhome.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Profile</h4>
+        <form method ='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for i in data %}
+            <div class="template-demo">
+                <div><img style="height: 170px;width: 160px;" src="{{i.image.url}}" ></div>
+                <div style="color:black";>
+                  <li class="list-group-item">Name : {{i.name}}</li>
+                  <li class="list-group-item">Age : {{i.age}} </li>
+                  <li class="list-group-item">Address : {{i.address}}</li>
+                </div>
+                <a class="btn btn-primary" href="{% url 'profileupdate' i.id %}">UPDATE</a>
+
+                {% endfor %}
+        </form>
+         </div>
+    </div>
+</div>
+
+<!--<center>-->
+
+<!--<form method ='post' enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--       {% for i in data %}-->
+<!--    <div style="margin-top:50px;margin-left:30px">-->
+
+<!--  <ul class="list-group list-group-flush">-->
+<!--      <li><div><img style="height: 170px;width: 160px;" src="{{i.image.url}}" ></div></li>-->
+<!--    <li class="list-group-item">Name : {{i.name}}</li>-->
+<!--    <li class="list-group-item">Age : {{i.age}} </li>-->
+<!--    <li class="list-group-item">Address : {{i.address}}</li>-->
+
+<!-- <a class="btn btn-primary" href="{% url 'profileupdate' i.id %}">UPDATE</a>-->
+<!--  </ul>-->
+<!--  </div>-->
+<!-- {% endfor %}-->
+<!--</form>-->
+<!--</center>-->
+{% endblock %}
