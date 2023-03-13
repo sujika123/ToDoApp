@@ -12,8 +12,8 @@ class userlogin(models.Model):
     address=models.TextField(max_length=200)
     image=models.ImageField()
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 # Event
 class eventadd(models.Model):

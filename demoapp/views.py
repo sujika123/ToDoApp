@@ -5,13 +5,12 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from demoapp.forms import LoginForm, userloginform, eventaddform
-from demoapp.models import userlogin, eventadd
+from demoapp.models import userlogin, eventadd, Login
 
 
 def home(request):
     return render(request,'index.html')
-# def login(request):
-#     return render(request,'signin.html')
+
 def log(request):
     if request.method=='POST':
         username = request.POST.get('uname')
@@ -48,7 +47,6 @@ def register(request):
             c.save()
             return redirect(log)
     return render(request,'registration.html',{'form':form,'form1':form1})
-
 
 
 def user(request):
@@ -127,7 +125,8 @@ def eventupdate(request,id):
 def eventdelete(request,id):
     data=eventadd.objects.get(id=id)
     data.delete()
-    return redirect('profileview')
+    return redirect('viewevent')
+
 
 
 
@@ -160,6 +159,7 @@ def update(request,id):
     return render(request,'Admin/update.html',{'form':form})
 
 def delete(request,id):
-    user=userlogin.objects.get(id=id)
-    user.delete()
+    usr=userlogin.objects.get(id=id)
+    usr.delete()
     return redirect('user')
+

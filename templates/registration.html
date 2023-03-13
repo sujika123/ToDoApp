@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: blue;">
 <br>
-<a href = "{% url 'home' %}"><button class="btn btn-info">< Home</button></a>
+<a href = "{% url 'home' %}"><button class="btn btn-primary">< Home</button></a>
 <div style="">
 <form method="post" enctype="multipart/form-data" style="margin-left:550px;margin-top:30px;width:450px;background-color:white;color:black;">
    <div style="margin-left:58px;"><br>
@@ -19,7 +19,10 @@
 {{form|crispy}}
 {{form1|crispy}}
 <br>
+<div style="margin-left:135px;">
 <button class="btn btn-primary" type="Submit">Submit</button>
+</div>
+ <br><br>
  </div>
 </form>
     </div>

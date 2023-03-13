@@ -16,11 +16,13 @@
                   <li class="list-group-item">Age : {{i.age}} </li>
                   <li class="list-group-item">Address : {{i.address}}</li>
                 </div>
+            </div>
+            <br>
                 <a class="btn btn-primary" href="{% url 'profileupdate' i.id %}">UPDATE</a>
 
                 {% endfor %}
         </form>
-         </div>
+
     </div>
 </div>
 

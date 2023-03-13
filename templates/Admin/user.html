@@ -1,28 +1,26 @@
 {% extends 'Admin/index.html' %}
 {% block content %}
 
-<div>
-                <div class="card">
+<div class="card">
                   <div class="card-body">
                     <h4 class="card-title">View Users</h4>
-<!--                    <p class="card-description"> Add class <code>.table-dark</code>-->
-<!--                    </p>-->
-                    <table class="table table-dark">
+
+                    <table class="table" >
                       <thead>
                         <tr>
                           <th>SI NO</th>
                           <th>Name</th>
                           <th>Age</th>
                           <th>Address</th>
-                          <th> image</th>
-                          <th> status</th>
-                          <th> status</th>
+                          <th>Image</th>
+                          <th>Edit</th>
+                          <th>Edit</th>
                         </tr>
                       </thead>
                       <tbody>
                       {% csrf_token %}
                       {% for i in data %}
-                        <tr>
+                       <tr>
                           <td>{{ forloop.counter }}</td>
                           <td>{{i.name}}</td>
                           <td>{{i.age}} </td>
@@ -33,11 +31,51 @@
 
                         </tr>
                          {% endfor %}
-                     </tbody>
+
+                      </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+
+
+
+<!--<div>-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <h4 class="card-title">View Users</h4>-->
+<!--                    <table class="table table-dark">-->
+<!--                      <h2>View Users</h2>-->
+<!--                      <thead>-->
+<!--                        <tr>-->
+<!--                          <th>SI NO</th>-->
+<!--                          <th>Name</th>-->
+<!--                          <th>Age</th>-->
+<!--                          <th>Address</th>-->
+<!--                          <th> image</th>-->
+<!--                          <th> status</th>-->
+<!--                          <th> status</th>-->
+<!--                        </tr>-->
+<!--                      </thead>-->
+<!--                      <tbody>-->
+<!--                      {% csrf_token %}-->
+<!--                      {% for i in data %}-->
+<!--                        <tr>-->
+<!--                          <td>{{ forloop.counter }}</td>-->
+<!--                          <td>{{i.name}}</td>-->
+<!--                          <td>{{i.age}} </td>-->
+<!--                          <td>{{i.address}}</td>-->
+<!--                          <td><img style="height:100px;width:130px;" src="{{i.image.url}}"></td>-->
+<!--                          <td><a href="{% url 'update' i.id %}"><button class="btn btn-info" type="submit">Update</button></a></td>-->
+<!--                          <td><a href="{% url 'delete' i.id %}"><button class="btn btn-danger" type="submit">Delete</button></a></td>-->
+
+<!--                        </tr>-->
+<!--                         {% endfor %}-->
+<!--                     </tbody>-->
+<!--                    </table>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
 
 
 
