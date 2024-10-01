@@ -24,6 +24,5 @@ class eventadd(models.Model):
     image=models.ImageField()
 
 
-
     def __str__(self):
         return self.name
